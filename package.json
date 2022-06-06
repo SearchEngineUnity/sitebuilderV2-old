@@ -1,0 +1,60 @@
+{
+  "name": "siteBuilderV1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "lerna run clean",
+    "deploy": "lerna run deploy",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run clean && lerna run start --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SearchEngineUnity/siteBuilderV1.git"
+  },
+  "keywords": [
+    "demo",
+    "MUI",
+    "site",
+    "builder"
+  ],
+  "author": "SEU Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SearchEngineUnity/siteBuilderV1/issues"
+  },
+  "homepage": "https://github.com/SearchEngineUnity/siteBuilderV1#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "gatsby-cli": "^3.6.0",
+    "husky": "^4.3.8",
+    "lerna": "^4.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "gatsby-plugin-google-gtag": "^3.14.0",
+    "gatsby-plugin-google-tagmanager": "^3.14.0"
+  }
+}

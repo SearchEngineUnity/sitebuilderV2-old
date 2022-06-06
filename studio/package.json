@@ -1,0 +1,49 @@
+{
+  "name": "studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "SEU Developer <dev@searchengineunity.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check",
+    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
+    "graphql-deploy": "sanity graphql deploy --generation gen3",
+    "sanity-deploy": "sanity deploy",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@sanity/base": "^2.29.3",
+    "@sanity/color-input": "^2.29.3",
+    "@sanity/components": "^2.1.0",
+    "@sanity/core": "^2.29.3",
+    "@sanity/dashboard": "^2.29.3",
+    "@sanity/default-layout": "^2.29.3",
+    "@sanity/default-login": "^2.29.3",
+    "@sanity/desk-tool": "^2.29.4",
+    "@sanity/vision": "^2.29.3",
+    "get-video-id": "^3.4.3",
+    "prop-types": "^15.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "sanity-plugin-dashboard-widget-gatsby": "^1.0.9",
+    "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
+    "sanity-plugin-gatsby-cloud-preview": "^1.0.2",
+    "sanity-plugin-media": "^1.1.2",
+    "sanity-plugin-table": "^2.2.0",
+    "styled-components": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SearchEngineUnity/seu.git"
+  }
+}
