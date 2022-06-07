@@ -1,5 +1,6 @@
 import React from 'react';
-import { createTheme, makeStyles, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { Container, Typography, Grid, Paper, Box } from '@mui/material';
 
 const useStyles = makeStyles({

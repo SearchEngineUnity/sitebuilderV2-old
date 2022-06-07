@@ -60,7 +60,6 @@ module.exports = {
         watchMode: !isProd,
       },
     },
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {

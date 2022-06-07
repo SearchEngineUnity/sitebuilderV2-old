@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import Hidden from '@mui/material/Hidden';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { Link } from 'gatsby-theme-material-ui';
 import NavBrand from '../headerElements/NavBrand';
 import ContactInfo from '../../ContactInfo';
@@ -94,7 +94,7 @@ const MainFooter = ({ data }) => {
               <Box component="p" mr={2}>
                 &#0169; Copyright {new Date().getFullYear()} {contactInfo.name}
               </Box>
-              <Link to="/privacy-policy" role="menuitem" color="inherit">
+              <Link to="/privacy-policy" role="menuitem" color="inherit" underline="none">
                 Privacy Policy
               </Link>
               <Hidden smDown>

@@ -1,6 +1,6 @@
 // import React from 'react';
 // import { Typography, Card, CardContent } from '@material-ui/core';
-// import { makeStyles } from '@mui/material/styles';
+// import { makeStyles } from '@mui/styles';
 // import { getGatsbyImageData } from 'gatsby-source-sanity';
 // import { GatsbyImage } from 'gatsby-plugin-image';
 // import { CardActionArea } from 'gatsby-theme-material-ui';

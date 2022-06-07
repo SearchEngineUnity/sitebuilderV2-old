@@ -64,6 +64,7 @@ const NavGroup = ({ title, subGroup, location, position }) => {
         aria-controls={open ? title.replace(' ', '-') : undefined}
         aria-expanded={open}
         aria-haspopup="true"
+        underline="none"
       >
         <Box fontSize="h4.fontSize">
           {title}

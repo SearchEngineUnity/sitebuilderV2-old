@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import Footer from '../portableText/serializer/HeroFooterSerializer';
 
 const useStyles = makeStyles((theme) => ({

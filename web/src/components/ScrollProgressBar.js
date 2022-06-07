@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 
 const useStyles = makeStyles({
@@ -36,6 +36,7 @@ export default function ScrollPRogressBar() {
     setProgress(scrollPosition);
   };
 
+  // need to review the useEffect functions to make sure we are rendering when required
   useEffect(() => {
     const handleScroll = () => {
       requestAnimationFrame(() => {

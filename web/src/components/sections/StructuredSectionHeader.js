@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import Subtitle from '../portableText/serializer/H2SubtitleSerializer';
 
 const useStyles = makeStyles((theme) => ({

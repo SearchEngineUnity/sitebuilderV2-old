@@ -32,27 +32,26 @@ const ThemeProvider = ({ children, data }) => {
         white: determineColor(palette?.white?.color) || '#fff',
       },
       primary: {
-        light: determineColor(palette?.primary?.light?.color) || '#7986cb',
-        main: determineColor(palette?.primary?.main?.color) || '#3f51b5',
-        dark: determineColor(palette?.primary?.dark?.color) || '#303f9f',
+        light: determineColor(palette?.primary?.light?.color) || '#42a5f5',
+        main: determineColor(palette?.primary?.main?.color) || '#1976d2',
+        dark: determineColor(palette?.primary?.dark?.color) || '#1565c0',
         contrastText: determineColor(palette?.primary?.contrastText?.color) || '#fff',
       },
       secondary: {
-        light: determineColor(palette?.secondary?.light?.color) || '#ff4081',
-        main: determineColor(palette?.secondary?.main?.color) || '#f50057',
-        dark: determineColor(palette?.secondary?.dark?.color) || '#c51162',
+        light: determineColor(palette?.secondary?.light?.color) || '#ba68c8',
+        main: determineColor(palette?.secondary?.main?.color) || '#9c27b0',
+        dark: determineColor(palette?.secondary?.dark?.color) || '#7b1fa2',
         contrastText: determineColor(palette?.secondary?.contrastText?.color) || '#fff',
       },
       text: {
         primary: determineColor(palette?.primaryText?.color) || 'rgba(0, 0, 0, 0.87)',
-        secondary: determineColor(palette?.secondaryText?.color) || 'rgba(0, 0, 0, 0.54)',
+        secondary: determineColor(palette?.secondaryText?.color) || 'rgba(0, 0, 0, 0.6)',
         disabled: determineColor(palette?.disabled?.color) || 'rgba(0, 0, 0, 0.38)',
-        hint: determineColor(palette?.hint?.color) || 'rgba(0, 0, 0, 0.38)',
       },
       divider: determineColor(palette?.divider?.color) || 'rgba(0, 0, 0, 0.12)',
       background: {
         paper: determineColor(palette?.paper?.color) || '#fff',
-        default: determineColor(palette?.default?.color) || '#fafafa',
+        default: determineColor(palette?.default?.color) || '#fff',
       },
       hlBox: {
         definition: {
@@ -404,12 +403,6 @@ export default function TopLayout({ children }) {
               }
             }
             divider {
-              color {
-                hex
-                alpha
-              }
-            }
-            hintText {
               color {
                 hex
                 alpha

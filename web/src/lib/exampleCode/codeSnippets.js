@@ -1,4 +1,4 @@
-// import { makeStyles } from '@mui/material/styles';
+// import { makeStyles } from '@mui/styles';
 
 // // This is how you apply pseudo class with useStyles
 // const useStyles = makeStyles((theme) => ({

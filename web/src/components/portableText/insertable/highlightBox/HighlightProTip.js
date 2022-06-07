@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import TextContent from '../../serializer/HighlightBoxSerializer';
 

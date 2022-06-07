@@ -12,7 +12,7 @@ import Slide from '@mui/material/Slide';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from 'gatsby-theme-material-ui';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import NavItem from './NavItem';
 import NavPhone from './NavPhone';
 import NavGroup from './NavGroupHamburger';

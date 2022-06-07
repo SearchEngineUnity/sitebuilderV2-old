@@ -1,20 +1,19 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from 'react';
-import { createTheme, makeStyles, ThemeProvider, useTheme } from '@mui/material/styles';
-import {
-  TextField,
-  Select,
-  Radio,
-  FormControl,
-  FormGroup,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  FormHelperText,
-  Checkbox,
-  Box,
-  Typography,
-} from '@material-ui/core';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormLabel from '@mui/material/FormLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import ButtonSubmit from '../buttons/ButtonSubmit';
 import { mapMuiBtnSubmitToProps } from '../../lib/mapToProps';
 

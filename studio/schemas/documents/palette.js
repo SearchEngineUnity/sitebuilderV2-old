@@ -82,13 +82,6 @@ export default {
       fieldset: 'text',
     },
     {
-      name: 'hintText',
-      title: 'Text Hint Color Setting',
-      type: 'reference',
-      to: [{ type: 'colorOption' }],
-      fieldset: 'text',
-    },
-    {
       name: 'divider',
       title: 'Divider Color Setting',
       type: 'reference',

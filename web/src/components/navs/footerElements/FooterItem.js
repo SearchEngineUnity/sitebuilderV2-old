@@ -34,7 +34,7 @@ function FooterItem({ url, title, isButton }) {
         </ThemeProvider>
       ) : (
         <Box fontSize={14} fontWeight="fontWeightBold">
-          <Link to={`/${url}`} color="inherit">
+          <Link to={`/${url}`} color="inherit" underline="none">
             {title}
           </Link>
         </Box>

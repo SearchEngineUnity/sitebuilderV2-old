@@ -5,7 +5,7 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import ListContent from '../serializer/ListSerializer';
 
 const useStyles = makeStyles({
