@@ -1,9 +1,9 @@
 import React from 'react';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import { Container, Typography, Grid, Paper, Box } from '@mui/material';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   media: {
     height: 0,
     paddingTop: '100%', // 16:9
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 });
 
 const Page = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const defaultTheme = createTheme();
   const customTheme = createTheme({
     typography: {
