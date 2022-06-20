@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import CardActionAreaExternal from '../cardActionArea/CardActionAreaExternal';
@@ -11,7 +11,7 @@ import CardActionAreaJumpLink from '../cardActionArea/CardActionAreaJumpLink';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 import sanityConfig from '../../../sanityConfig';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   card: {
     border: '1px solid #acb4b8',
     borderRadius: '0.25rem',
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 });
 
 function TileImageRecSqr({ image, alt, link, title }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const imageData = getGatsbyImageData(
     image,

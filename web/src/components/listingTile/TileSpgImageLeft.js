@@ -3,20 +3,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { CardActionArea } from 'gatsby-theme-material-ui';
 import sanityConfig from '../../../sanityConfig';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   card: {
     height: '100%',
   },
 });
 
 function TileImageRecSqr({ image, alt, url, title, text, date }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
 

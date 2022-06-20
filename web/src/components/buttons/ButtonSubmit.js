@@ -2,14 +2,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()((theme, { padding }) => ({
   size: {
-    padding: (props) => props.padding,
+    padding,
   },
-});
+}));
 
 function ButtonSubmit({
   text,
@@ -51,7 +51,7 @@ function ButtonSubmit({
     },
   });
 
-  const classes = useStyles({ padding });
+  const { classes } = useStyles({ padding });
 
   return (
     <ThemeProvider theme={theme}>

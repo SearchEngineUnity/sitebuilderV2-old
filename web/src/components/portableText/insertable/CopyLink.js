@@ -3,11 +3,11 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import LinkIcon from '@mui/icons-material/Link';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 
 // Inherit style of Tooltip has a grey background and text is in theme.palette.primary.main
 // When using a button within a tool tip, custom tooltip color styling will be inherited by the button
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   tooltip: {
     color: theme.palette.common.white,
   },
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CopyLink({ id }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [baseURL, setBaseURL] = useState(null);
 
   useEffect(() => {

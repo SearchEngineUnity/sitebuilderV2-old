@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -12,7 +12,7 @@ import NavPhone from './NavPhone';
 import MainNavHamburger from './MainNavHamburger';
 import { mapNavBrandToProps, mapNavItemToProps, mapNavGroupToProps } from '../../../lib/mapToProps';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   appBar: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.black,
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MainNav = ({ data, location }) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>

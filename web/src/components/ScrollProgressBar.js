@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   root: {
     width: '100%',
     position: 'sticky',
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 });
 
 export default function ScrollPRogressBar() {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [progress, setProgress] = useState(0);
 
   const getDocHeight = () =>

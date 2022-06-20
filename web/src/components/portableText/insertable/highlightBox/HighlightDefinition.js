@@ -2,11 +2,11 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import TextContent from '../../serializer/HighlightBoxSerializer';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     backgroundColor: theme.palette.hlBox.definition.bgColor,
     borderColor: theme.palette.hlBox.definition.borderColor,
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HighlightDefinition({ blockContent, id }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   return (
     <Box component={Paper} variant="outlined" key={id} className={classes.root} my={2} p={2}>
       <Typography component="p" variant="h4" className={classes.text}>

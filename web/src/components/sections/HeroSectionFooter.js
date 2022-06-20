@@ -1,9 +1,9 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import Footer from '../portableText/serializer/HeroFooterSerializer';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   footer: {
     [theme.breakpoints.down('sm')]: {
       marginTop: 16,
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function StructuredSectionFooter({ footer, footerColor, align, hasSectionFooter }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   return (
     <>
       {!hasSectionFooter && footer && (

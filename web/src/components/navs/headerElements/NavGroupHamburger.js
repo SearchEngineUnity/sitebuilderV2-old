@@ -10,9 +10,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   appBar: {
     position: 'relative',
     backgroundColor: theme.palette.common.white,
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavGroupHamburger = ({ navGroup, index }) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [collapse, setCollapse] = React.useState(true);
   const handleClickCollapse = () => {
     setCollapse(!collapse);

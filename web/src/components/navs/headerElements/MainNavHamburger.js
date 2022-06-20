@@ -12,13 +12,13 @@ import Slide from '@mui/material/Slide';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from 'gatsby-theme-material-ui';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import NavItem from './NavItem';
 import NavPhone from './NavPhone';
 import NavGroup from './NavGroupHamburger';
 import { mapNavItemToProps } from '../../../lib/mapToProps';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   appBar: {
     position: 'relative',
     backgroundColor: theme.palette.common.white,
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
 function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

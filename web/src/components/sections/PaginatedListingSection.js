@@ -2,14 +2,15 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import StructuredSectionFooter from './StructuredSectionFooter';
 import StructuredSectionHeader from './StructuredSectionHeader';
 import { determineColor } from '../../lib/helperFunctions';
 import TileImageLeft from '../listingTile/TileSpgImageLeft';
 import Pagination from '../ListingPagination';
 
-const useStyles = makeStyles((theme) => ({
+// TODO jss-to-tss-react codemod: Unable to handle style definition reliably. ArrowFunctionExpression in CSS prop.
+const useStyles = makeStyles()((theme, { linkColor }) => ({
   mobileGrid: {
     [theme.breakpoints.down('sm')]: {
       margin: -8,
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 16,
     },
     '& .pt-link': {
-      color: (props) => props.linkColor,
+      color: linkColor,
     },
   },
 }));
@@ -59,7 +60,7 @@ function PaginatedListingSection({
   const subtitleColor = determineColor(colorSettings?.subtitle?.color) || 'inherit';
   const footerColor = determineColor(colorSettings?.footer?.color) || 'inherit';
   const paginationColor = colorSettings?.foreground?.color;
-  const classes = useStyles({ linkColor, foregroundColor });
+  const { classes } = useStyles({ linkColor });
 
   return (
     <Box

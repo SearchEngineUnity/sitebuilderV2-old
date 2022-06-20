@@ -5,10 +5,10 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import ListContent from '../serializer/ListSerializer';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   list: {
     listStylePosition: 'inside',
     listStyle: 'none',
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 });
 
 function SmartOrderedList({ listItems }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const fontStyles = {
     h2: 'h2',
     h3: 'h3',

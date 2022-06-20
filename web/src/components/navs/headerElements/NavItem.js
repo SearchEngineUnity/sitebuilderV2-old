@@ -2,16 +2,16 @@ import React from 'react';
 import { Link, Button } from 'gatsby-theme-material-ui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   primaryOutline: {
     outlineColor: theme.palette.primary.main,
   },
 }));
 
 function NavItem({ url, title, isButton, location }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   return (
     <>
       {isButton ? (

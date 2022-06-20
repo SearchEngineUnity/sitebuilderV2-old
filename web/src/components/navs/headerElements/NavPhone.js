@@ -1,16 +1,16 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   primaryOutline: {
     outlineColor: theme.palette.primary.main,
   },
 }));
 
 function NavPhone({ text, number }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>

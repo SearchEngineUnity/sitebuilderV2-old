@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import Subtitle from '../portableText/serializer/H2SubtitleSerializer';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   header: {
     [theme.breakpoints.down('sm')]: {
       marginBottom: 16,
@@ -20,7 +20,7 @@ function StructuredSectionHeader({
   hasSectionHeading,
   hasSectionSubtitle,
 }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   return (
     <>
       {(!hasSectionHeading && heading) || (!hasSectionSubtitle && subtitle) ? (
