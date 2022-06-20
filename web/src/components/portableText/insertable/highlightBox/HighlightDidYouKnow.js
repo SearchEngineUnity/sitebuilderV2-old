@@ -20,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: theme.palette.hlBox.dyk.textColor,
   },
-  link: {
-    color: theme.palette.hlBox.definition.linkColor,
-  },
 }));
 
 function HighlightDidYouKnow({ blockContent, id }) {

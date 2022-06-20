@@ -145,6 +145,12 @@ export default {
       type: 'hlbColorSet',
       fieldset: 'highlightBox',
     },
+    {
+      name: 'disclaimer',
+      title: 'Disclaimer Highlight Box',
+      type: 'hlbColorSet',
+      fieldset: 'highlightBox',
+    },
   ],
   preview: {
     select: {},

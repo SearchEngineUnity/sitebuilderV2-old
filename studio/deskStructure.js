@@ -47,7 +47,7 @@ export default () =>
               S.listItem()
                 .title('General Settings')
                 .icon(MdSettings)
-                .child(S.document().schemaType('generalSettings').documentId('generalSettings')),
+                .child(S.document().schemaType('generalSettings').documentId('generalSettings')), // adding document id, it means it will not allow you to create another instance of this doc. It's a singleton.
               S.listItem()
                 .title('Theme - Palette')
                 .icon(FaPalette)

@@ -17,6 +17,7 @@ export default {
           { title: 'Warning', value: 'Warning' },
           { title: 'Did You Know', value: 'Did You Know' },
           { title: 'Definition', value: 'Definition' },
+          { title: 'Disclaimer', value: 'Disclaimer' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
