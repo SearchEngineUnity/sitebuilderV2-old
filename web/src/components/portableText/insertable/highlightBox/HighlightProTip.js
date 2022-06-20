@@ -20,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: theme.palette.hlBox.proTip.textColor,
   },
-  link: {
-    color: theme.palette.hlBox.definition.linkColor,
-  },
 }));
 
 function HighlightProTip({ blockContent, id }) {

@@ -5,6 +5,7 @@ import HighlightImportant from './HighlightImportant';
 import HighlightWarning from './HighlightWarning';
 import HighlightDidYouKnow from './HighlightDidYouKnow';
 import HighlightDefinition from './HighlightDefinition';
+import HighlightDisclaimer from './HighlightboxDisclaimer';
 
 const HighlightBox = ({ box }) => {
   switch (box.type) {
@@ -40,6 +41,13 @@ const HighlightBox = ({ box }) => {
       return (
         <Box mx="40px" my={2}>
           <HighlightDefinition blockContent={box.text} id={box._key} />
+        </Box>
+      );
+
+    case 'Disclaimer':
+      return (
+        <Box mx="40px" my={2}>
+          <HighlightDisclaimer blockContent={box.text} id={box._key} />
         </Box>
       );
 
