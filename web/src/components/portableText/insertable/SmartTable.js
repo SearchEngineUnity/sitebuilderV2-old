@@ -13,19 +13,20 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import TableContent from '../serializer/TableSerializer';
 import FixedTableImage from './FixedTableImage';
 
-const useStyles = makeStyles((theme) => ({
+// TODO minWidth failing same as basic table
+const useStyles = makeStyles()((theme, { minWidth }) => ({
   root: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
-  table: (props) => ({
+  table: {
     tableLayout: 'fixed',
-    minWidth: props.minWidth,
-  }),
+    minWidth,
+  },
   row: {
     verticalAlign: 'top',
   },
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SmartTable({ smartTable }) {
   const { colHeading, rowHeading, title, minWidth, colgroup } = smartTable;
-  const classes = useStyles({ minWidth });
+  const { classes } = useStyles({ minWidth });
 
   let thead = [];
   let tbody = smartTable.table.rows;

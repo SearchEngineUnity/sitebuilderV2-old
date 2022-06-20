@@ -8,21 +8,22 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles({
-  table: (props) => ({
+// TODO this table minwidth is beign overriden
+const useStyles = makeStyles()((theme, { minWidth }) => ({
+  table: {
     tableLayout: 'fixed',
-    minWidth: props.minWidth,
-  }),
+    minWidth,
+  },
   row: {
     verticalAlign: 'top',
   },
-});
+}));
 
 function BasicTable({ basicTable }) {
   const { colHeading, rowHeading, title, minWidth, colgroup } = basicTable;
-  const classes = useStyles({ minWidth });
+  const { classes } = useStyles({ minWidth });
 
   let thead = [];
   let tbody = basicTable.table.rows;

@@ -2,14 +2,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import HeroSectionFooter from './HeroSectionFooter';
 import HeroSectionHeader from './HeroSectionHeader';
 import { determineColor } from '../../lib/helperFunctions';
 import TileImageLeft from '../listingTile/TileSpgImageLeft';
 import Pagination from '../ListingPagination';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme, { linkColor }) => ({
   mobileGrid: {
     [theme.breakpoints.down('sm')]: {
       margin: -8,
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 16,
     },
     '& .pt-link': {
-      color: (props) => props.linkColor,
+      color: linkColor,
     },
   },
 }));
@@ -58,7 +58,7 @@ function PaginatedListingSectionH1({
   const headingColor = determineColor(colorSettings?.heading?.color) || 'inherit';
   const subtitleColor = determineColor(colorSettings?.subtitle?.color) || 'inherit';
   const footerColor = determineColor(colorSettings?.footer?.color) || 'inherit';
-  const classes = useStyles({ linkColor, foregroundColor });
+  const { classes } = useStyles({ linkColor });
   const paginationColor = colorSettings?.foreground?.color;
 
   return (

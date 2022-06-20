@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import Hidden from '@mui/material/Hidden';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import { Link } from 'gatsby-theme-material-ui';
 import NavBrand from '../headerElements/NavBrand';
 import ContactInfo from '../../ContactInfo';
@@ -16,7 +16,7 @@ import FooterItem from './FooterItem';
 import NavPhone from '../headerElements/NavPhone';
 import { mapNavBrandToProps, mapNavItemToProps, mapNavGroupToProps } from '../../../lib/mapToProps';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   divider: {
     backgroundColor: theme.palette.common.white,
   },
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MainFooter = ({ data }) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { sanityContactInfo: contactInfo, sanityNavMenu: footerMenu } = data;
   const { menuArray } = footerMenu;
 

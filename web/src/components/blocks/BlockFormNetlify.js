@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from 'react';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
@@ -23,7 +23,7 @@ function encode(data) {
     .join('&');
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   control: {
     marginBottom: theme.spacing(2),
   },
@@ -92,7 +92,7 @@ function FormNetlify({ align, title, form, style }) {
     },
   });
 
-  const classes = useStyles();
+  const { classes } = useStyles(theme);
   const [state, setState] = useState({});
   const [requiredRadioFields, setRequiredRadioFields] = useState(null);
   const [requiredCheckboxFields, setRequiredCheckboxFields] = useState(null);

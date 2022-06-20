@@ -19,7 +19,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.8.1",
     "@mui/base": "^5.0.0-alpha.83",
     "@mui/icons-material": "^5.8.2",
@@ -57,6 +57,7 @@
     "react-redux": "^8.0.2",
     "react-scroll": "^1.8.2",
     "redux": "^4.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "tss-react": "^3.7.0"
   }
 }

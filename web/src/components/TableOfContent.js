@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Link } from 'gatsby-theme-material-ui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     backgroundColor: theme.palette.grey[100],
     position: 'sticky',
@@ -27,7 +27,7 @@ const accumulateOffsetTop = (el, totalOffset = 0) => {
   return totalOffset;
 };
 function Toc({ toc }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [headings, setHeadings] = useState({
     titles: [],
     nodes: [],

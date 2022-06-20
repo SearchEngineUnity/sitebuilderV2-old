@@ -3,14 +3,14 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from 'tss-react/mui';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Subtitle from '../portableText/serializer/HeroSubtitleSerializer';
 import ProgressBar from '../ScrollProgressBar';
 import { mapFluidImgBlockToProps } from '../../lib/mapToProps';
 import { useSpGuideHero } from '../../hooks/useSpGuideHero';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   section: {
     [theme.breakpoints.down('sm')]: {
       padding: 16,
@@ -25,7 +25,7 @@ function GuideHero({ h1, subtitle, date, image }) {
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const heroAlignment = useSpGuideHero();
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>
