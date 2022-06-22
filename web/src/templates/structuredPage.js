@@ -178,15 +178,6 @@ export const query = graphql`
                 }
               }
             }
-            ... on SanityImageBlock {
-              _key
-              _type
-              alt
-              _rawAsset(resolveReferences: { maxDepth: 10 })
-              maxHeight
-              maxWidth
-              _rawCaption(resolveReferences: { maxDepth: 10 })
-            }
             ... on SanityHeroBlock {
               _key
               _type
@@ -211,6 +202,14 @@ export const query = graphql`
               title
               titleAlignment
               _rawFormStyle(resolveReferences: { maxDepth: 10 })
+            }
+            ... on SanityHeroImageBlock {
+              _key
+              _type
+              _rawAsset(resolveReferences: { maxDepth: 10 })
+              alt
+              maxHeight
+              maxWidth
             }
           }
           idTag

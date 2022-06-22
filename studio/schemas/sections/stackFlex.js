@@ -1,5 +1,4 @@
 import { BsViewStacked } from 'react-icons/bs';
-
 import * as blocks from '../blocks';
 
 export default {
@@ -38,6 +37,7 @@ export default {
       of: [
         ...Object.values(blocks)
           .filter((block) => block.name !== 'heroBlock')
+          .filter((block) => block.name !== 'heroImageBlock')
           .map(({ name, title }) => ({
             type: name,
             title,

@@ -66,7 +66,7 @@ export function mapFluidImgBlockToProps({ _rawAsset, alt, _rawCaption, maxHeight
   return {
     image: _rawAsset,
     alt,
-    caption: _rawCaption,
+    caption: _rawCaption || undefined,
     maxHeight,
     maxWidth,
   };

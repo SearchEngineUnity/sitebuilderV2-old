@@ -185,14 +185,13 @@ export const query = graphql`
                 }
               }
             }
-            ... on SanityImageBlock {
+            ... on SanityHeroImageBlock {
               _key
               _type
               alt
               _rawAsset(resolveReferences: { maxDepth: 10 })
               maxHeight
               maxWidth
-              _rawCaption(resolveReferences: { maxDepth: 10 })
             }
             ... on SanityHeroBlock {
               _key

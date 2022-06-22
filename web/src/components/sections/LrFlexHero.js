@@ -163,7 +163,7 @@ function LrFlexHero({
               switch (true) {
                 case key === 'videoBlock':
                   return <VideoBlock key={_key} url={block.url} ratio={block.ratio} />;
-                case key === 'imageBlock':
+                case key === 'heroImageBlock':
                   return (
                     <ImgBlock {...mapFluidImgBlockToProps(block)} key={_key} loading="eager" />
                   );

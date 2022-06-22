@@ -58,7 +58,6 @@ export const query = graphql`
         }
         maxHeight
         maxWidth
-        _rawCaption(resolveReferences: { maxDepth: 10 })
       }
       _rawHeroSubtitle(resolveReferences: { maxDepth: 10 })
     }
