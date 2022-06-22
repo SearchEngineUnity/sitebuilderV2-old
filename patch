@@ -1,0 +1,25 @@
+diff --git a/studio/schemas/blocks/index.js b/studio/schemas/blocks/index.js
+index 45650aa..bc16923 100644
+--- a/studio/schemas/blocks/index.js
++++ b/studio/schemas/blocks/index.js
+@@ -2,6 +2,7 @@ export { default as btnBlockMui } from './btnBlockMui';
+ export { default as blockFormNetlify } from './blockFormNetlify';
+ export { default as gridFlex } from './gridFlex';
+ export { default as heroBlock } from './heroBlock';
++export { default as heroImageBlock } from './heroImageBlock';
+ export { default as sectionBlock } from './sectionBlock';
+ export { default as imageBlock } from './imageBlock';
+ export { default as videoBlock } from './videoBlock';
+diff --git a/studio/schemas/documents/soloGuidePage.js b/studio/schemas/documents/soloGuidePage.js
+index 557cb05..d757bc7 100644
+--- a/studio/schemas/documents/soloGuidePage.js
++++ b/studio/schemas/documents/soloGuidePage.js
+@@ -177,7 +177,7 @@ export default {
+     {
+       name: 'heroImage',
+       title: 'Hero Image',
+-      type: 'imageBlock',
++      type: 'heroImageBlock',
+       fieldset: 'hero',
+       validation: (Rule) => Rule.custom(({ asset }) => (asset ? true : 'An image is required')),
+     },
