@@ -37,6 +37,7 @@ export default {
       of: [
         ...Object.values(blocks)
           .filter((block) => block.name !== 'sectionBlock')
+          .filter((block) => block.name !== 'imageBlock')
           .map(({ name, title }) => ({
             type: name,
             title,

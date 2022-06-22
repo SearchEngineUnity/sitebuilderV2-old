@@ -37,6 +37,7 @@ export default {
       of: [
         ...Object.values(blocks)
           .filter((block) => block.name !== 'heroBlock')
+          .filter((block) => block.name !== 'heroImageBlock')
           .map(({ name, title }) => ({
             type: name,
             title,
