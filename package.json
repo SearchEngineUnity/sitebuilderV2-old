@@ -1,5 +1,5 @@
 {
-  "name": "siteBuilderV1",
+  "name": "siteBuilderV2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SearchEngineUnity/siteBuilderV1.git"
+    "url": "git+https://github.com/SearchEngineUnity/siteBuilderV2.git"
   },
   "keywords": [
     "demo",
@@ -34,9 +34,9 @@
   "author": "SEU Dev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SearchEngineUnity/siteBuilderV1/issues"
+    "url": "https://github.com/SearchEngineUnity/siteBuilderV2/issues"
   },
-  "homepage": "https://github.com/SearchEngineUnity/siteBuilderV1#readme",
+  "homepage": "https://github.com/SearchEngineUnity/siteBuilderV2#readme",
   "devDependencies": {
     "eslint": "^7.19.0",
     "eslint-config-airbnb": "^18.2.1",
