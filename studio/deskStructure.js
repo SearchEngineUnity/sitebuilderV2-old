@@ -12,7 +12,7 @@ import FormDesignPreview from './preview/FormDesignPreview';
 
 export default () =>
   S.list()
-    .title('Site Builder V1')
+    .title('Site Builder V2')
     .items([
       S.documentTypeListItem('textBlock').title('Text Block'), // new to test paste handling
       S.listItem()

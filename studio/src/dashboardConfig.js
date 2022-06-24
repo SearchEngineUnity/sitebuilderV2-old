@@ -6,10 +6,10 @@ export default {
         title: 'My Netlify deploys',
         sites: [
           {
-            title: 'Site Builder V1',
-            apiId: '4fe5d933-672d-47d0-828b-dd08600061ac',
-            buildHookId: '620e8cb23e949e1921ab9548',
-            name: 'sitebuilderv1',
+            title: 'Site Builder V2',
+            apiId: '4ce45844-a1b7-45f9-bb49-0026d5420e5c',
+            buildHookId: '62b5c106997625009c13884f',
+            name: 'sitebuilderv2',
           },
         ],
       },
@@ -18,7 +18,7 @@ export default {
       name: 'gatsby',
       options: {
         title: 'Gatsby Preview Site',
-        sites: [{ siteUrl: 'https://preview-sitebuilderv1.gtsb.io/' }],
+        sites: [{ siteUrl: 'https://preview-sitebuilderv2.gtsb.io/' }],
       },
     },
   ],
