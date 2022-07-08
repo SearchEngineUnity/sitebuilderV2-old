@@ -33,15 +33,13 @@ module.exports = {
         lang: 'en',
       },
     },
+    'gatsby-plugin-material-ui',
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
         webFontsConfig: {
           fonts: {
             google: [
-              {
-                family: `Lobster`,
-              },
               {
                 family: `Material+Icons`,
               },
