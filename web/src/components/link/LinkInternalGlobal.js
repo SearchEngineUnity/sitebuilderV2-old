@@ -8,6 +8,7 @@ function InternalGlobal({ href, children, newTab, className }) {
       rel={newTab ? 'noopener' : undefined}
       href={href}
       className={className}
+      underline="always"
     >
       {children}
     </Link>
