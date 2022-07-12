@@ -2,7 +2,6 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { makeStyles } from 'tss-react/mui';
 import ImgBlock from '../blocks/FluidImgBlock';
 import VideoBlock from '../blocks/VideoBlock';
 import SectionBlock from '../blocks/HeroSectionBlock';
@@ -22,39 +21,6 @@ import {
 import HeroSectionFooter from './HeroSectionFooter';
 import HeroSectionHeader from './HeroSectionHeader';
 import { determineColor } from '../../lib/helperFunctions';
-
-// TODO jss-to-tss-react codemod: Unable to handle style definition reliably. ArrowFunctionExpression in CSS prop.
-const useStyles = makeStyles()((theme, { linkColor }) => ({
-  blockOneReverse: {
-    order: 1,
-    [theme.breakpoints.down('sm')]: {
-      order: 2,
-    },
-  },
-  blockTwoReverse: {
-    order: 2,
-    [theme.breakpoints.down('sm')]: {
-      order: 1,
-    },
-  },
-  mobileGrid: {
-    [theme.breakpoints.down('sm')]: {
-      margin: -8,
-      width: `calc(100% + 16px)`,
-      '& > .MuiGrid-item': {
-        padding: 8,
-      },
-    },
-  },
-  section: {
-    [theme.breakpoints.down('sm')]: {
-      padding: 16,
-    },
-    '& .pt-link': {
-      color: linkColor,
-    },
-  },
-}));
 
 function LrFlexHero({
   idTag,
@@ -130,16 +96,22 @@ function LrFlexHero({
   const subtitleColor = determineColor(colorSettings?.subtitle?.color) || 'inherit';
   const footerColor = determineColor(colorSettings?.footer?.color) || 'inherit';
 
-  const { classes } = useStyles({ linkColor });
-
   return (
     <Box
       id={idTag}
       component="section"
-      py={8}
-      bgcolor={backgroundColor}
-      color={foregroundColor}
-      className={classes.section}
+      sx={{
+        bgcolor: backgroundColor,
+        color: foregroundColor,
+        padding: {
+          xs: '1rem',
+          sm: '4rem',
+        },
+        '& .pt-link': {
+          color: linkColor,
+          textDecorationColor: linkColor,
+        },
+      }}
     >
       <Container maxWidth="lg">
         <HeroSectionHeader
@@ -153,8 +125,8 @@ function LrFlexHero({
           container
           justifyContent="center"
           alignItems={blockAlignment}
-          spacing={8}
-          className={classes.mobileGrid}
+          spacing={{ xs: 1, sm: 4 }}
+          direction={reverseOrder ? { xs: 'column-reverse', md: 'row' } : 'row'}
         >
           {blocks.map((block, index) => {
             const { _type, _key } = block;
@@ -193,20 +165,12 @@ function LrFlexHero({
                   return <ButtonInternalGlobal key={_key} {...mapMuiBtnToProps(block)} />;
                 case key === 'btnBlockMui' && block.link[0]._type === 'internalLocal':
                   return <ButtonInternalLocal key={_key} {...mapMuiBtnToProps(block)} />;
-
                 default:
                   return <div key="default-inner-block"> Block still under development</div>;
               }
             };
             return (
-              <Grid
-                item
-                {...col}
-                key={block._key}
-                className={`${index === 0 && reverseOrder ? classes.blockOneReverse : null} ${
-                  index === 1 && reverseOrder ? classes.blockTwoReverse : null
-                }`}
-              >
+              <Grid item {...col} key={block._key}>
                 {blockSelector(_type)}
               </Grid>
             );
