@@ -33,10 +33,10 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'image-only-rectangle/square', value: '1' },
-          { title: 'image-only-circle', value: '2' },
-          { title: 'image-title-border', value: '3' },
-          { title: 'image-title-text-base', value: '4' },
+          { title: 'Image only - rectangle/square', value: '1' },
+          { title: 'Image only - circle', value: '2' },
+          { title: 'Image title border', value: '3' },
+          { title: 'Image title text base', value: '4' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -50,13 +50,13 @@ export default {
     prepare({ name, tileOption }) {
       switch (tileOption) {
         case '1':
-          return { title: name || 'Grid Flex', subtitle: 'display: image-only-rectangle/square' };
+          return { title: name || 'Grid Flex', subtitle: 'display: Image only - rectangle/square' };
         case '2':
-          return { title: name || 'Grid Flex', subtitle: 'display: image-only-circle' };
+          return { title: name || 'Grid Flex', subtitle: 'display: Image only - circle' };
         case '3':
-          return { title: name || 'Grid Flex', subtitle: 'display: image-title-border' };
+          return { title: name || 'Grid Flex', subtitle: 'display: Image title border' };
         case '4':
-          return { title: name || 'Grid Flex', subtitle: 'display: image-title-text-base' };
+          return { title: name || 'Grid Flex', subtitle: 'display: Image title text base' };
         default:
           return { title: 'Error' };
       }
