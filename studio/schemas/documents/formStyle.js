@@ -20,7 +20,7 @@ export default {
         'This determines the field variant that is used for Input, Textarea, and Select.',
       options: {
         list: [
-          { title: 'Underline', value: 'standard' },
+          { title: 'Underlined', value: 'standard' },
           { title: 'Filled', value: 'filled' },
           { title: 'Outlined', value: 'outlined' },
         ],
