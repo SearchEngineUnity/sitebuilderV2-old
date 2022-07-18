@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from 'react';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
-import { makeStyles } from 'tss-react/mui';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
@@ -22,12 +21,6 @@ function encode(data) {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
 }
-
-const useStyles = makeStyles()((theme) => ({
-  control: {
-    marginBottom: theme.spacing(2),
-  },
-}));
 
 function FormNetlify({ align, title, form, style }) {
   const {
@@ -59,40 +52,73 @@ function FormNetlify({ align, title, form, style }) {
         secondary: labelColor.color.hex, // control label text, helper text, and the border of checkbox and radio icons
       },
     },
+    shape: {
+      borderRadius: fieldBorderRadius,
+    },
     typography: prevTheme.typography,
-    overrides: {
+    components: {
       MuiOutlinedInput: {
-        root: {
-          borderRadius: fieldBorderRadius, // border radius change for outlined variant
-          backgroundColor: fieldBgColor.color.hex, // background color change for outlined variant
+        styleOverrides: {
+          root: {
+            backgroundColor: fieldBgColor.color.hex, // background color change for outlined variant
+          },
+          notchedOutline: {
+            borderColor: labelColor.color.hex, // outline color for the outline variant
+          },
         },
       },
       MuiFilledInput: {
-        root: {
-          backgroundColor: fieldBgColor.color.hex, // background color for filled variant
-          '&:hover': {
-            backgroundColor: fieldBgHoverColor.color.hex, // background color on hover for filled variant
-          },
-          '@media (hover: none)': {
-            backgroundColor: fieldBgColor.color.hex, // background color for filled variant when media has no hover
+        styleOverrides: {
+          root: {
+            backgroundColor: fieldBgColor.color.hex, // background color for filled variant
             '&:hover': {
-              backgroundColor: fieldBgColor.color.hex, // background color on hover for filled variant when media has no hover
+              backgroundColor: fieldBgHoverColor.color.hex, // background color on hover for filled variant
+            },
+            '@media (hover: none)': {
+              backgroundColor: fieldBgColor.color.hex, // background color for filled variant when media has no hover
+              '&:hover': {
+                backgroundColor: fieldBgColor.color.hex, // background color on hover for filled variant when media has no hover
+              },
+            },
+            '&.Mui-focused': {
+              backgroundColor: fieldBgColor.color.hex, // background color when clicked into the field
+            },
+            '&:before': {
+              borderColor: labelColor.color.hex, // border color for the underline for filled variant
             },
           },
-          '&.Mui-focused': {
-            backgroundColor: fieldBgColor.color.hex, // background color when clicked into the field
+        },
+      },
+      MuiInput: {
+        styleOverrides: {
+          root: {
+            '&:before': {
+              borderColor: labelColor.color.hex, // underline color for the underline variant
+            },
           },
         },
       },
       MuiFormControlLabel: {
-        root: {
-          color: labelColor.color.hex,
+        styleOverrides: {
+          root: {
+            color: labelColor.color.hex, // radio / check box option labels
+          },
+        },
+      },
+      MuiFormLabel: {
+        styleOverrides: {
+          root: {
+            color: labelColor.color.hex, // form field label color
+            '&.Mui-focused': {
+              color: labelColor.color.hex, // form field label color on focus
+            },
+          },
         },
       },
     },
   });
 
-  const { classes } = useStyles(theme);
+  // const { classes } = useStyles(theme);
   const [state, setState] = useState({});
   const [requiredRadioFields, setRequiredRadioFields] = useState(null);
   const [requiredCheckboxFields, setRequiredCheckboxFields] = useState(null);
@@ -118,9 +144,9 @@ function FormNetlify({ align, title, form, style }) {
     setErrorMsgs({ ...errorMsgs, [e.target.name]: '' });
   };
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = (e, key) => {
     setState({ ...state, [e.target.name]: e.target.checked });
-    const key = e.target.closest('fieldset').id;
+    // const key = e.target.closest('fieldset').id;
     setErrorMsgs({ ...errorMsgs, [key]: '' });
   };
 
@@ -226,8 +252,8 @@ function FormNetlify({ align, title, form, style }) {
   return (
     <ThemeProvider theme={theme}>
       <Box boxShadow={5} p={6} bgcolor="background.paper">
-        <Box textAlign={align} color={labelColor.color.hex}>
-          <Typography component="p" variant="h3" paragraph>
+        <Box color={labelColor.color.hex}>
+          <Typography component="p" variant="h3" paragraph textAlign={align}>
             {title}
           </Typography>
         </Box>
@@ -263,7 +289,6 @@ function FormNetlify({ align, title, form, style }) {
                     component={input.options.length > 1 ? 'fieldset' : 'div'}
                     fullWidth
                     key={_key}
-                    className={classes.control}
                     error={!!errorMsgs[input.id]}
                     id={input.id}
                   >
@@ -282,7 +307,7 @@ function FormNetlify({ align, title, form, style }) {
                               <Checkbox
                                 name={option.value}
                                 checked={isChecked}
-                                onChange={handleCheckboxChange}
+                                onChange={(event) => handleCheckboxChange(event, input.id)}
                                 value={isChecked.toString()}
                                 inputProps={{ 'aria-label': option.label }}
                               />
