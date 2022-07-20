@@ -23,7 +23,6 @@ export default {
       name: 'phone',
       title: 'Contact Phone Number',
       type: 'string',
-      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'address1',

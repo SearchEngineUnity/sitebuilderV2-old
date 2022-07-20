@@ -29,7 +29,8 @@ export default {
       name: 'hashID',
       title: 'Hash ID',
       type: 'string',
-      description: 'Please only use alphanumeric characters and hypen',
+      description:
+        'Add Hash Id to the selected string. Please only use alphanumeric characters and hypen.',
     },
     {
       name: 'listItemType',

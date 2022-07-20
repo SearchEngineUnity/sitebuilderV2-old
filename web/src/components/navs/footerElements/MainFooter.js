@@ -75,7 +75,7 @@ const MainFooter = ({ data }) => {
                         return (
                           <Hidden smDown key={item._key}>
                             <Grid item>
-                              <NavPhone text={item.text} number={item.phoneNUmber} />
+                              <NavPhone text={item.text} number={item.phoneNumber} />
                             </Grid>
                           </Hidden>
                         );

@@ -36,6 +36,8 @@ export default {
                 title: 'ID',
                 name: 'idTag',
                 type: 'string',
+                description:
+                  'Add Hash Id to the selected string. Please only use alphanumeric characters and hypen.',
               },
             ],
           },
@@ -52,7 +54,8 @@ export default {
                 name: 'hashId',
                 title: 'Hash Id',
                 type: 'string',
-                description: 'Please enter the ID of the section you would like to jump to',
+                description:
+                  'Please enter the ID you would like to jump to. Do not include the # symbol.',
               },
             ],
           },
@@ -81,7 +84,8 @@ export default {
                 name: 'hashId',
                 title: 'Hash Id',
                 type: 'string',
-                description: 'Please enter the ID of the section you would like to jump to',
+                description:
+                  'Please enter the ID you would like to jump to. Do not include the # symbol.',
               },
               {
                 name: 'parameter',
