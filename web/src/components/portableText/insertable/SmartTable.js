@@ -75,7 +75,6 @@ function SmartTable({ smartTable }) {
                     return (
                       <TableCell
                         key={`${thead._key}-${index}`}
-                        style={{ overflow: 'hidden' }}
                         scope="col"
                         role="columnheader"
                         className={classes.crossed}
@@ -93,7 +92,7 @@ function SmartTable({ smartTable }) {
                   if (cell._type === 'tableBlock') {
                     return (
                       // eslint-disable-next-line
-                  <TableCell key={`${thead._key}-${index}`} style={{overflow: 'hidden'}} scope="col" role="columnheader">
+                  <TableCell key={`${thead._key}-${index}`} scope="col" role="columnheader">
                         <TableContent blocks={cell.copy} />
                       </TableCell>
                     );
@@ -101,7 +100,7 @@ function SmartTable({ smartTable }) {
                   if (cell._type === 'tableImage') {
                     return (
                       // eslint-disable-next-line
-                  <TableCell key={`${thead._key}-${index}`} style={{ verticalAlign: 'top', overflow: 'hidden' }} scope="col" role="columnheader">
+                  <TableCell key={`${thead._key}-${index}`} scope="col" role="columnheader">
                         <FixedTableImage illustration={cell} />
                       </TableCell>
                     );
@@ -122,7 +121,7 @@ function SmartTable({ smartTable }) {
                     if (cell._type === 'tableBlock') {
                       return (
                         // eslint-disable-next-line
-                      <TableCell className="MuiTableCell-head" component="th" key={`${row._key}-${index}`} style={{ verticalAlign: 'top', overflow: 'hidden' }} scope="row" role="rowheader">
+                      <TableCell component="th" variant="head" key={`${row._key}-${index}`} scope="row" role="rowheader">
                           <TableContent blocks={cell.copy} />
                         </TableCell>
                       );
@@ -130,12 +129,16 @@ function SmartTable({ smartTable }) {
                     if (cell._type === 'tableImage') {
                       return (
                         // eslint-disable-next-line
-                      <TableCell component="th" key={`${row._key}-${index}`} style={{ verticalAlign: 'top', overflow: 'hidden' }} scope="row" role="rowheader">
+                      <TableCell component="th" variant="head" key={`${row._key}-${index}`} scope="row" role="rowheader">
                           <FixedTableImage illustration={cell} />
                         </TableCell>
                       );
                     }
-                    return <TableCell component="th">oh oh something is wrong</TableCell>;
+                    return (
+                      <TableCell component="th" variant="head">
+                        oh oh something is wrong
+                      </TableCell>
+                    );
                   }
                   if (cell._type === 'emptyCell') {
                     return <TableCell key={`${thead._key}-${index}`} role="cell" />;
@@ -143,7 +146,7 @@ function SmartTable({ smartTable }) {
                   if (cell._type === 'tableBlock') {
                     return (
                       // eslint-disable-next-line
-                    <TableCell key={`${row._key}-${index}`} style={{ verticalAlign: 'top', overflow: 'hidden' }} role="cell">
+                    <TableCell key={`${row._key}-${index}`} role="cell">
                         <TableContent blocks={cell.copy} />
                       </TableCell>
                     );
@@ -151,7 +154,7 @@ function SmartTable({ smartTable }) {
                   if (cell._type === 'tableImage') {
                     return (
                       // eslint-disable-next-line
-                    <TableCell key={`${row._key}-${index}`} style={{ verticalAlign: 'top', overflow: 'hidden' }} role="cell">
+                    <TableCell key={`${row._key}-${index}`} role="cell">
                         <FixedTableImage illustration={cell} />
                       </TableCell>
                     );
