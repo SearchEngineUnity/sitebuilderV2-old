@@ -146,7 +146,6 @@ function FormNetlify({ align, title, form, style }) {
 
   const handleCheckboxChange = (e, key) => {
     setState({ ...state, [e.target.name]: e.target.checked });
-    // const key = e.target.closest('fieldset').id;
     setErrorMsgs({ ...errorMsgs, [key]: '' });
   };
 

@@ -17,25 +17,13 @@ import { makeStyles } from 'tss-react/mui';
 import TableContent from '../serializer/TableSerializer';
 import FixedTableImage from './FixedTableImage';
 
-// TODO minWidth failing same as basic table
-const useStyles = makeStyles()((theme, { minWidth }) => ({
-  root: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-  },
-  table: {
-    tableLayout: 'fixed',
-    minWidth,
-  },
-  row: {
-    verticalAlign: 'top',
-  },
+const useStyles = makeStyles()({
   crossed: {
     background:
       'linear-gradient(to top right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 1px), rgba(224, 224, 224, 1) 50%, rgba(0,0,0,0) calc(50% + 1px), rgba(0,0,0,0) 100%);',
   },
   split: {
-    postion: 'relative',
+    position: 'relative',
     height: '100%',
     width: '100%',
     top: 0,
@@ -47,11 +35,11 @@ const useStyles = makeStyles()((theme, { minWidth }) => ({
   noWrap: {
     whiteSpace: 'nowrap',
   },
-}));
+});
 
 function SmartTable({ smartTable }) {
   const { colHeading, rowHeading, title, minWidth, colgroup } = smartTable;
-  const { classes } = useStyles({ minWidth });
+  const { classes } = useStyles();
 
   let thead = [];
   let tbody = smartTable.table.rows;
@@ -63,8 +51,8 @@ function SmartTable({ smartTable }) {
 
   return (
     <Box mx="40px" my={2}>
-      <TableContainer component={Paper} className={classes.root}>
-        <Table className={classes.table} size="small" aria-label={title} role="table">
+      <TableContainer component={Paper}>
+        <Table size="small" aria-label={title} role="table" sx={{ minWidth }}>
           {colgroup && (
             <colgroup>
               {colgroup.map((col, index) =>
@@ -81,7 +69,7 @@ function SmartTable({ smartTable }) {
               <TableRow key={thead._key}>
                 {thead.cells.map((cell, index) => {
                   if (cell._type === 'emptyCell') {
-                    return <td key={`${thead._key}-${index}`} role="cell" />;
+                    return <TableCell key={`${thead._key}-${index}`} role="cell" />;
                   }
                   if (cell._type === 'splitCell') {
                     return (
@@ -125,9 +113,12 @@ function SmartTable({ smartTable }) {
           )}
           <TableBody>
             {tbody.map((row) => (
-              <TableRow key={row._key} className={classes.row}>
+              <TableRow key={row._key}>
                 {row.cells.map((cell, index) => {
                   if (rowHeading && index === 0) {
+                    if (cell._type === 'emptyCell') {
+                      return <TableCell key={`${thead._key}-${index}`} role="cell" />;
+                    }
                     if (cell._type === 'tableBlock') {
                       return (
                         // eslint-disable-next-line
@@ -145,6 +136,9 @@ function SmartTable({ smartTable }) {
                       );
                     }
                     return <TableCell component="th">oh oh something is wrong</TableCell>;
+                  }
+                  if (cell._type === 'emptyCell') {
+                    return <TableCell key={`${thead._key}-${index}`} role="cell" />;
                   }
                   if (cell._type === 'tableBlock') {
                     return (

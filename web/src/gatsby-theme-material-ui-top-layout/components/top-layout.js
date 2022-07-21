@@ -216,6 +216,23 @@ const ThemeProvider = ({ children, data }) => {
         textTransform: 'none',
       },
     },
+    components: {
+      MuiTable: {
+        styleOverrides: {
+          root: {
+            tableLayout: 'fixed',
+          },
+        },
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          root: {
+            overflow: 'hidden',
+            verticalAlign: 'top',
+          },
+        },
+      },
+    },
   });
 
   theme = responsiveFontSizes(theme);
