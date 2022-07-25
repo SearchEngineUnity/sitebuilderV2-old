@@ -154,6 +154,7 @@ function LrFlexHero({
                 case key === 'gridFlex':
                   return <GridFlex key={block._key} {...mapGridFlexToProps(block)} />;
                 case key === 'blockFormNetlify':
+                  console.log(block);
                   return (
                     <BlockFormNetlify key={block._key} {...mapBlockFormNetlifyToProps(block)} />
                   );

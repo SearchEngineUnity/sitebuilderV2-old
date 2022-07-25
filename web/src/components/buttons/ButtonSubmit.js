@@ -20,6 +20,7 @@ function ButtonSubmit({
   fullWidth,
   borderRadius,
   padding,
+  align,
   colors,
   typography,
 }) {
@@ -55,7 +56,7 @@ function ButtonSubmit({
 
   return (
     <ThemeProvider theme={theme}>
-      <Box p={3}>
+      <Box sx={{ display: 'flex', justifyContent: align, py: 3, textAlign: 'center' }}>
         <Button
           color="primary"
           variant={variant}

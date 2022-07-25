@@ -234,21 +234,21 @@ export function mapPaginatedListingSectionToProps({
   };
 }
 
-export function mapMuiBtnToProps({ idTag, btnAlignment, link, text, design }) {
+export function mapMuiBtnToProps({ idTag, btnAlignment, link, text, btnDesign }) {
   return {
     idTag,
     text,
-    variant: design?.settings?.variant,
-    disableElevation: design?.settings?.disableElevation,
-    disableFocusRipple: design?.settings?.disableFocusRipple,
-    disableRipple: design?.settings?.disableRipple,
-    fullWidth: design?.settings?.fullWidth,
-    borderRadius: design?.settings?.borderRadius,
-    padding: design?.settings?.padding,
+    variant: btnDesign?.settings?.variant,
+    disableElevation: btnDesign?.settings?.disableElevation,
+    disableFocusRipple: btnDesign?.settings?.disableFocusRipple,
+    disableRipple: btnDesign?.settings?.disableRipple,
+    fullWidth: btnDesign?.settings?.fullWidth,
+    borderRadius: btnDesign?.settings?.borderRadius,
+    padding: btnDesign?.settings?.padding,
     link,
-    colors: design?.colors,
+    colors: btnDesign?.colors,
     alignment: btnAlignment,
-    typography: design?.typography,
+    typography: btnDesign?.typography,
   };
 }
 
@@ -292,7 +292,7 @@ export function mapBlockFormNetlifyToProps({
 }) {
   return {
     title,
-    align: titleAlignment,
+    titleAlignment,
     form: _rawFormNetlify,
     style: _rawFormStyle,
   };

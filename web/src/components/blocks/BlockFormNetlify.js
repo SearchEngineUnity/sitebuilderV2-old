@@ -22,13 +22,14 @@ function encode(data) {
     .join('&');
 }
 
-function FormNetlify({ align, title, form, style }) {
+function FormNetlify({ titleAlignment, title, form, style }) {
   const {
     backgroundColor: fieldBgColor,
     fieldBgHoverColor,
     focusedColor,
     borderRadius: fieldBorderRadius,
-    btnStyle,
+    btnDesign,
+    btnAlignment,
     fieldVariant: variant,
     labelColor,
     inputColor,
@@ -252,7 +253,7 @@ function FormNetlify({ align, title, form, style }) {
     <ThemeProvider theme={theme}>
       <Box boxShadow={5} p={6} bgcolor="background.paper">
         <Box color={labelColor.color.hex}>
-          <Typography component="p" variant="h3" paragraph textAlign={align}>
+          <Typography component="p" variant="h3" paragraph textAlign={titleAlignment}>
             {title}
           </Typography>
         </Box>
@@ -432,7 +433,12 @@ function FormNetlify({ align, title, form, style }) {
                 return <div key="form-default">Form Field not Created</div>;
             }
           })}
-          <ButtonSubmit type="submit" text={submitBtn.text} {...mapMuiBtnSubmitToProps(btnStyle)} />
+          <ButtonSubmit
+            type="submit"
+            text={submitBtn.text}
+            align={btnAlignment}
+            {...mapMuiBtnSubmitToProps(btnDesign)}
+          />
         </form>
       </Box>
     </ThemeProvider>

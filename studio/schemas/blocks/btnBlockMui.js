@@ -49,16 +49,20 @@ export default {
       title: 'Button Alignment',
       type: 'string',
       options: {
-        list: ['left', 'center', 'right'],
+        list: [
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'flex-end' },
+        ],
         layout: 'radio',
         direction: 'horizontal',
       },
       fieldset: 'presentation',
-      initialValue: 'left',
+      initialValue: 'flex-start',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
-      name: 'design',
+      name: 'btnDesign',
       title: 'Button Design Option',
       type: 'reference',
       to: [{ type: 'btnDesignMui' }],
