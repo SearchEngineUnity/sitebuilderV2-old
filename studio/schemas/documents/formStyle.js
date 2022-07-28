@@ -89,8 +89,24 @@ export default {
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
-      name: 'btnStyle',
-      title: 'Button Style',
+      name: 'btnAlignment',
+      title: 'Button Alignment',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'flex-end' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      initialValue: 'flex-start',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
+      name: 'btnDesign',
+      title: 'Button Design Option',
       type: 'reference',
       to: [{ type: 'btnDesignMui' }],
       validation: (Rule) => [Rule.required().error('Field is required')],

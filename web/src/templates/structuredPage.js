@@ -139,7 +139,7 @@ export const query = graphql`
                 }
               }
               text
-              design {
+              btnDesign {
                 typography {
                   fontFamily
                   fontWeight
@@ -411,7 +411,7 @@ export const query = graphql`
                 }
               }
               text
-              design {
+              btnDesign {
                 typography {
                   fontFamily
                   fontWeight
@@ -628,7 +628,7 @@ export const query = graphql`
                 }
               }
               text
-              design {
+              btnDesign {
                 typography {
                   fontFamily
                   fontWeight
