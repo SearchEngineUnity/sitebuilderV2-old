@@ -220,10 +220,10 @@ export function mapPaginatedListingSectionToProps({
   layout = '1/1/1',
   colorSettings,
   header,
-  hashID,
+  idTag,
 }) {
   return {
-    idTag: hashID,
+    idTag,
     heading: header?.heading,
     subtitle: header?._rawSubtitle,
     footer: _rawFooter,
