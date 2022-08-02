@@ -6,7 +6,7 @@ export default {
     {
       name: 'id',
       type: 'string',
-      title: 'Id Tag',
+      title: 'ID Tag',
       description: 'Give one string to identify this field',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },

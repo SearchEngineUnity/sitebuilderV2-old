@@ -22,6 +22,7 @@ export default {
       name: 'idTag',
       title: 'Button ID',
       type: 'string',
+      description: 'Add ID to the button. Please only use alphanumeric characters and hypen.',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {

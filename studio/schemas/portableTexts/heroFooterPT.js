@@ -27,7 +27,7 @@ export default {
             fields: [
               {
                 name: 'hashId',
-                title: 'Hash Id',
+                title: 'Hash ID',
                 type: 'string',
                 description:
                   'Please enter the ID you would like to jump to. Do not include the # symbol.',
@@ -57,7 +57,7 @@ export default {
               },
               {
                 name: 'hashId',
-                title: 'Hash Id',
+                title: 'Hash ID',
                 type: 'string',
                 description:
                   'Please enter the ID you would like to jump to. Do not include the # symbol.',
