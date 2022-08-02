@@ -19,7 +19,7 @@ export default {
       marks: {
         annotations: [
           {
-            title: 'Hash Id',
+            title: 'Hash ID',
             name: 'hashId',
             type: 'object',
             blockEditor: {
@@ -32,7 +32,7 @@ export default {
                 name: 'idTag',
                 type: 'string',
                 description:
-                  'Add Hash Id to the selected string. Please only use alphanumeric characters and hypen.',
+                  'Add ID to the selected string. Please only use alphanumeric characters and hypen.',
               },
             ],
           },
@@ -47,7 +47,7 @@ export default {
             fields: [
               {
                 name: 'hashId',
-                title: 'Hash Id',
+                title: 'Hash ID',
                 type: 'string',
                 description:
                   'Please enter the ID you would like to jump to. Do not include the # symbol.',
@@ -77,7 +77,7 @@ export default {
               },
               {
                 name: 'hashId',
-                title: 'Hash Id',
+                title: 'Hash ID',
                 type: 'string',
                 description:
                   'Please enter the ID you would like to jump to. Do not include the # symbol.',
