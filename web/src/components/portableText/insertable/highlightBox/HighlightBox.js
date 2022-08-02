@@ -1,59 +1,50 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import HighlightProTip from './HighlightProTip';
-import HighlightImportant from './HighlightImportant';
-import HighlightWarning from './HighlightWarning';
-import HighlightDidYouKnow from './HighlightDidYouKnow';
-import HighlightDefinition from './HighlightDefinition';
-import HighlightDisclaimer from './HighlightboxDisclaimer';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import HighlightBoxIcon from './HighlightBoxIcon';
+import TextContent from '../../serializer/HighlightBoxSerializer';
 
 const HighlightBox = ({ box }) => {
-  switch (box.type) {
-    case 'Pro Tip':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightProTip blockContent={box.text} id={box._key} />
-        </Box>
-      );
+  const hlbTypes = {
+    proTip: 'Pro Tip',
+    important: 'Important',
+    warning: 'Warning',
+    dyk: 'Did You Know',
+    definition: 'Definition',
+    disclaimer: 'Disclaimer',
+  };
 
-    case 'Important':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightImportant blockContent={box.text} id={box._key} />
-        </Box>
-      );
+  const { id, type, text } = box;
 
-    case 'Warning':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightWarning blockContent={box.text} id={box._key} />
-        </Box>
-      );
-
-    case 'Did You Know':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightDidYouKnow blockContent={box.text} id={box._key} />
-        </Box>
-      );
-
-    case 'Definition':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightDefinition blockContent={box.text} id={box._key} />
-        </Box>
-      );
-
-    case 'Disclaimer':
-      return (
-        <Box mx="40px" my={2}>
-          <HighlightDisclaimer blockContent={box.text} id={box._key} />
-        </Box>
-      );
-
-    default:
-      return <h3>Undefined Highlight Box</h3>;
-  }
+  return (
+    <Paper
+      variant="outlined"
+      key={id}
+      sx={[
+        {
+          my: 2,
+          mx: '40px',
+          p: 2,
+          bgcolor: `hlBox.${type}.bgColor`,
+          color: `hlBox.${type}.textColor`,
+          borderColor: `hlBox.${type}.borderColor`,
+        },
+        (theme) => ({
+          '& .pt-link': {
+            color: theme.palette.hlBox[type]?.linkColor,
+            textDecorationColor: theme.palette.hlBox[type]?.linkColor,
+          },
+        }),
+      ]}
+    >
+      <Typography component="p" variant="h4">
+        <HighlightBoxIcon color={`hlBox.${type}.iconColor`} type={type} /> {hlbTypes[type]}
+      </Typography>
+      <div>
+        <TextContent blocks={text} />
+      </div>
+    </Paper>
+  );
 };
 
 export default HighlightBox;

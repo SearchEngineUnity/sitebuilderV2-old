@@ -12,12 +12,12 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Pro Tip', value: 'Pro Tip' },
-          { title: 'Important', value: 'Important' },
-          { title: 'Warning', value: 'Warning' },
-          { title: 'Did You Know', value: 'Did You Know' },
-          { title: 'Definition', value: 'Definition' },
-          { title: 'Disclaimer', value: 'Disclaimer' },
+          { title: 'Pro Tip', value: 'proTip' },
+          { title: 'Important', value: 'important' },
+          { title: 'Warning', value: 'warning' },
+          { title: 'Did You Know', value: 'dyk' },
+          { title: 'Definition', value: 'definition' },
+          { title: 'Disclaimer', value: 'disclaimer' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -34,10 +34,22 @@ export default {
       type: 'type',
     },
     prepare({ type }) {
-      return {
-        title: type,
-        subtitle: 'Highlight Box',
-      };
+      switch (type) {
+        case 'proTip':
+          return { title: 'Pro Tip', subtitle: 'Highlight Box' };
+        case 'important':
+          return { title: 'Important', subtitle: 'Highlight Box' };
+        case 'warning':
+          return { title: 'Warning', subtitle: 'Highlight Box' };
+        case 'dyk':
+          return { title: 'Did You Know', subtitle: 'Highlight Box' };
+        case 'definition':
+          return { title: 'Definition', subtitle: 'Highlight Box' };
+        case 'disclaimer':
+          return { title: 'Disclaimer', subtitle: 'Highlight Box' };
+        default:
+          return { title: 'Error' };
+      }
     },
   },
 };
