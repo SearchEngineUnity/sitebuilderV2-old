@@ -789,7 +789,7 @@ export const query = graphql`
             heading
           }
           headerAlignment
-          hashID
+          idTag
           colorSettings {
             background {
               color {
