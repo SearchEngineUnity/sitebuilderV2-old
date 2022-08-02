@@ -15,53 +15,15 @@ export default () =>
     .title('Site Builder V2')
     .items([
       S.documentTypeListItem('textBlock').title('Text Block'), // new to test paste handling
-      S.listItem()
-        .title('Website')
-        .icon(AiOutlineGlobal)
-        .child(
-          S.list()
-            .title('Website')
-            .items([
-              S.documentTypeListItem('navMenu').title('Navigation Menus'),
-              S.divider(),
-              S.documentTypeListItem('page').title('Structured Pages'),
-              S.documentTypeListItem('flexListingPage').title('Flex Listing Pages'),
-              S.documentTypeListItem('multiChapterGuideRootPage').title(
-                'Multi Chapter Guide Root Pages',
-              ),
-              S.documentTypeListItem('chapterGuidePage').title('Chapter Guide Pages'),
-              S.documentTypeListItem('soloGuidePage').title('Solo Guide Pages'),
-              S.divider(),
-              S.documentTypeListItem('redirect').title('Redirects'),
-            ]),
-        ),
-      S.documentTypeListItem('formNetlify').title('Form Netlify'),
+      S.documentTypeListItem('page').title('Structured Pages'),
+      S.documentTypeListItem('soloGuidePage').title('Solo Guide Pages'),
+      S.documentTypeListItem('flexListingPage').title('Flex Listing Pages'),
+      S.documentTypeListItem('multiChapterGuideRootPage').title('Multi Chapter Guide Root Pages'),
+      S.documentTypeListItem('chapterGuidePage').title('Chapter Guide Pages'),
+      S.documentTypeListItem('navMenu').title('Navigation Menus'),
       S.divider(),
-      S.listItem()
-        .title('Site Settings')
-        .icon(MdSettings)
-        .child(
-          S.list()
-            .title('Site Settings')
-            .items([
-              S.listItem()
-                .title('General Settings')
-                .icon(MdSettings)
-                .child(S.document().schemaType('generalSettings').documentId('generalSettings')), // adding document id, it means it will not allow you to create another instance of this doc. It's a singleton.
-              S.listItem()
-                .title('Theme - Palette')
-                .icon(FaPalette)
-                .child(S.document().schemaType('palette').documentId('palette')),
-              S.listItem()
-                .title('Theme - Typography')
-                .icon(BsType)
-                .child(S.document().schemaType('typography').documentId('typography')),
-              S.listItem()
-                .title('Solo Guide Page Hero Layout')
-                .icon(MdSettings)
-                .child(S.document().schemaType('layoutSpg').documentId('layoutSpg')),
-            ]),
-        ),
+      S.documentTypeListItem('redirect').title('Redirects'),
+      S.documentTypeListItem('formNetlify').title('Form Netlify'),
       S.documentTypeListItem('colorOption').title('Color Options'),
       S.listItem()
         .title('Design Options')
@@ -118,6 +80,31 @@ export default () =>
                         ]),
                     ),
                 ),
+            ]),
+        ),
+      S.listItem()
+        .title('Site Settings')
+        .icon(MdSettings)
+        .child(
+          S.list()
+            .title('Site Settings')
+            .items([
+              S.listItem()
+                .title('General Settings')
+                .icon(MdSettings)
+                .child(S.document().schemaType('generalSettings').documentId('generalSettings')), // adding document id, it means it will not allow you to create another instance of this doc. It's a singleton.
+              S.listItem()
+                .title('Theme - Palette')
+                .icon(FaPalette)
+                .child(S.document().schemaType('palette').documentId('palette')),
+              S.listItem()
+                .title('Theme - Typography')
+                .icon(BsType)
+                .child(S.document().schemaType('typography').documentId('typography')),
+              S.listItem()
+                .title('Solo Guide Page Hero Layout')
+                .icon(MdSettings)
+                .child(S.document().schemaType('layoutSpg').documentId('layoutSpg')),
             ]),
         ),
       S.listItem()
