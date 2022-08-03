@@ -8,23 +8,6 @@ export default {
   },
   fields: [
     {
-      name: 'align',
-      type: 'string',
-      title: 'Horizontal Alignment',
-      description:
-        'This only affects alignment for illustrations in portable text and smart table.',
-      options: {
-        list: [
-          { title: 'Left', value: 'flex-start' },
-          { title: 'Center', value: 'center' },
-        ],
-        layout: 'radio',
-        direction: 'horizontal',
-        // isHighlighted: true, // <-- make this field easily accessible
-      },
-      initialValue: 'flex-start',
-    },
-    {
       name: 'alt',
       type: 'string',
       title: 'Alt',
@@ -39,6 +22,21 @@ export default {
       options: {
         isHighlighted: true, // <-- make this field easily accessible
       },
+    },
+    {
+      name: 'align',
+      type: 'string',
+      title: 'Horizontal Alignment',
+      options: {
+        list: [
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+        isHighlighted: true, // <-- make this field easily accessible
+      },
+      initialValue: 'flex-start',
     },
   ],
   preview: {
