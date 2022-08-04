@@ -119,24 +119,18 @@ function FormNetlify({ titleAlignment, title, form, style }) {
     },
   });
 
+  const requiredRadioFields = formFields
+    .filter((field) => field.required && field._type === 'radio')
+    .map((field) => field.id);
+
+  const requiredCheckboxFields = formFields.filter(
+    (field) => field.required && field._type === 'checkbox',
+  );
+
   // const { classes } = useStyles(theme);
   const [state, setState] = useState({});
-  const [requiredRadioFields, setRequiredRadioFields] = useState(null);
-  const [requiredCheckboxFields, setRequiredCheckboxFields] = useState(null);
   const [errorMsgs, setErrorMsgs] = useState({});
   const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    const requirements = formFields
-      .filter((field) => field.required && field._type === 'radio')
-      .map((field) => field.id);
-    setRequiredRadioFields(requirements);
-  }, [formFields]);
-
-  useEffect(() => {
-    const requirements = formFields.filter((field) => field.required && field._type === 'checkbox');
-    setRequiredCheckboxFields(requirements);
-  }, [formFields]);
 
   let isValid = true;
 
@@ -215,7 +209,7 @@ function FormNetlify({ titleAlignment, title, form, style }) {
       });
 
       if (error) {
-        errors[requiredCheckboxFields[index].id] = 'Error: checkbox not checked.';
+        errors[requiredCheckboxFields[index].id] = 'Please check the box(es).';
       }
     }
 
@@ -276,8 +270,6 @@ function FormNetlify({ titleAlignment, title, form, style }) {
             </label>
           </p>
 
-          {success && <p>{thankYou}</p>}
-
           <input type="hidden" name="form-name" value={name} />
           {formFields.map((input) => {
             const { _type, _key } = input;
@@ -293,7 +285,7 @@ function FormNetlify({ titleAlignment, title, form, style }) {
                     id={input.id}
                   >
                     <FormLabel component={input.options.length > 1 ? 'legend' : 'label'}>
-                      {input.label}
+                      {input.label} {input.required && `(required)`}
                     </FormLabel>
                     <FormGroup>
                       {input.options.map((option) => {
@@ -331,7 +323,9 @@ function FormNetlify({ titleAlignment, title, form, style }) {
                     key={_key}
                     error={!!errorMsgs[input.id]}
                   >
-                    <FormLabel component="legend">{input.label}</FormLabel>
+                    <FormLabel component="legend">
+                      {input.label} {input.required && `(required)`}
+                    </FormLabel>
                     <RadioGroup
                       id={input.id}
                       aria-label={input.label}
@@ -357,7 +351,9 @@ function FormNetlify({ titleAlignment, title, form, style }) {
               case 'select':
                 return (
                   <FormControl fullWidth key={_key} error={!!errorMsgs[input.id]}>
-                    <FormLabel htmlFor={input.id}>{input.label}</FormLabel>
+                    <FormLabel htmlFor={input.id}>
+                      {input.label} {input.required && `(required)`}
+                    </FormLabel>
                     <Select
                       native
                       error={!!errorMsgs[input.id]}
@@ -386,7 +382,9 @@ function FormNetlify({ titleAlignment, title, form, style }) {
               case 'textarea':
                 return (
                   <FormControl fullWidth key={_key} error={!!errorMsgs[input.id]}>
-                    <FormLabel htmlFor={input.id}>{input.label}</FormLabel>
+                    <FormLabel htmlFor={input.id}>
+                      {input.label} {input.required && `(required)`}
+                    </FormLabel>
                     <TextField
                       id={input.id}
                       aria-describedby={`${input.id}-helper-text`}
@@ -409,7 +407,9 @@ function FormNetlify({ titleAlignment, title, form, style }) {
               case 'textInput':
                 return (
                   <FormControl fullWidth key={_key} error={!!errorMsgs[input.id]}>
-                    <FormLabel htmlFor={input.id}>{input.label}</FormLabel>
+                    <FormLabel htmlFor={input.id}>
+                      {input.label} {input.required && `(required)`}
+                    </FormLabel>
                     <TextField
                       error={!!errorMsgs[input.id]}
                       id={input.id}
@@ -433,6 +433,7 @@ function FormNetlify({ titleAlignment, title, form, style }) {
                 return <div key="form-default">Form Field not Created</div>;
             }
           })}
+          {success && <p>{thankYou}</p>}
           <ButtonSubmit
             type="submit"
             text={submitBtn.text}
